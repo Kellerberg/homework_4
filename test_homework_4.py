@@ -1,3 +1,9 @@
+import pytest
+import math
+import random
+
+random.seed()
+
 def test_greeting():
     """
     Напишите программу, которая выводит на экран приветствие.
@@ -5,7 +11,7 @@ def test_greeting():
     name = "Анна"
     age = 25
     # TODO Сформируйте нужную строку
-    output = ""
+    output = f"Привет, {name}! Тебе {age} лет."
     # Проверяем результат
     assert output == "Привет, Анна! Тебе 25 лет."
 
@@ -17,10 +23,10 @@ def test_rectangle():
     a = 10
     b = 20
     # TODO сосчитайте периметр
-    perimeter = 0
+    perimeter = (a + b) * 2
     assert perimeter == 60
     # TODO сосчитайте площадь
-    area = 0
+    area = a * b
     assert area == 200
 
 def test_circle():
@@ -29,11 +35,12 @@ def test_circle():
     Используйте константу PI
     """
     r = 23
+    r2 = r ** 2
     # TODO сосчитайте площадь
-    area = 0
+    area = math.pi * r2
     assert area == 1661.9025137490005
     # TODO сосчитайте длину окружности
-    length = 0
+    length = (math.pi * 2 * r)
     assert length == 144.51326206513048
 
 def test_random_list():
@@ -41,6 +48,7 @@ def test_random_list():
     Создайте список из 10 случайных чисел от 1 до 100 и отсортируйте его по возрастанию.
     """
     # TODO создайте список
+    
     l = []
     assert len(l) == 10
     assert l[0] < l[-1]
